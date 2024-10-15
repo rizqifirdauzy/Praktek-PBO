@@ -1,0 +1,20 @@
+{% title = nama %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% echo(title) %}</title>
+</head>
+<body>
+    <h1>Selamat Datang di Toko Buah Kami</h1>
+    <p>Daftar buah:</p>
+    <table>
+        {% for b in buah %}
+            {% echo("<tr><td>") %}
+            {% echo(b) %}
+            {% echo("</td></tr>\n") %}
+        {% endfor %}
+    </table>
+</body>
+</html>

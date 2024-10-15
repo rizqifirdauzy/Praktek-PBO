@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form POST Request</title>
+</head>
+<body>
+    <h1>Operasi POST</h1>
+    <form action="/template_post.html" method="post">
+        <p>
+            <label for="id_username">Username:</label>
+            <input type="text" id="id_username" name="username" />
+        </p>
+        <p>
+            <label for="id_passwd">Password:</label>
+            <input type="password" id="id_passwd" name="passwd" />
+        </p>
+        <p>
+            <input type="submit" value="Kirim">
+        </p>
+    </form>
+    <h2>Hasil POST Request:</h2>
+    {%
+        if 'username' in globals() and username:
+            echo("<h2>Hasil POST Request Username:</h2>")
+            echo_fmt("Username : %s", username)
+        if 'passwd' in globals() and passwd:
+            echo("<h2>Hasil POST Request Password:</h2>")
+            echo_fmt("Password : %s", passwd)
+    %}
+</body>
+</html>
